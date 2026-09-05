@@ -29,7 +29,8 @@ elseif(WIN32)
 
 	add_executable(cava
 		cava.c
-		cavacore.c
+    player.c
+    cavacore.c
 		config.c
 		input/common.c
 		input/winscap.c
@@ -111,7 +112,8 @@ else()
 
 	add_executable(cava
 		cava.c
-		config.c
+	  player.c
+    config.c
 		input/common.c
 		input/fifo.c
 		input/shmem.c
@@ -120,7 +122,7 @@ else()
 		output/noritake.c
 	)
 
-    target_link_libraries(cava PRIVATE cavacore Threads::Threads iniparser)
+    target_link_libraries(cava PRIVATE cavacore Threads::Threads iniparser ${CMAKE_DL_LIBS} m)
 	target_include_directories(cava PRIVATE ${INIPARSER_INCLUDE_DIR})
 	target_compile_definitions(cava PRIVATE
 		PACKAGE=\"cava\"

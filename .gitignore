@@ -35,6 +35,7 @@ cava_win/meson-private
 *~
 *.orig
 *.rej
+*.mp3
 
 CMakeCache.txt
 CMakeFiles

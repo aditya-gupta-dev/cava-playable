@@ -29,7 +29,7 @@
 #include "input/winscap.h"
 #include <windows.h>
 #define PATH_MAX 260
-#define PACKAGE "cava"
+#define PACKAGE "cava-playable"
 #define VERSION "1.0.0"
 #define _CRT_SECURE_NO_WARNINGS 1
 #endif // _WIN32
@@ -45,6 +45,8 @@
 #include "config.h"
 
 #include "util.h"
+
+#include "player.h"
 
 #ifdef SDL
 #include "output/sdl_cava.h"
@@ -312,6 +314,7 @@ float *monstercat_filter(float *bars, int number_of_bars, int waves, double mons
     return bars;
 }
 
+
 // general: entry point
 int main(int argc, char **argv) {
 
@@ -362,10 +365,11 @@ Keys:\n\
         {"config", required_argument, NULL, 'p'},
         {"version", no_argument, NULL, 'v'},
         {"help", no_argument, NULL, 'h'},
+        {"song", required_argument, NULL, 's'}, 
         {0, 0, 0, 0},
     };
     opterr = 0;
-    while ((c = getopt_long(argc, argv, ":p:vh", long_options, NULL)) != -1) {
+    while ((c = getopt_long(argc, argv, ":p:vhs:", long_options, NULL)) != -1) {
 #else
     while ((c = getopt(argc, argv, ":p:vh")) != -1) {
 #endif
@@ -377,8 +381,11 @@ Keys:\n\
             printf("%s", usage);
             return 0;
         case 'v': // argument: print version
-            printf(PACKAGE " " VERSION "\n");
+            printf("0.0.1 (aditya gupta build)\n");
             return 0;
+        case 's':
+            init_music_player(optarg); 
+            break; 
         case ':': // missing argument
             fprintf(stderr, PACKAGE ": error: option requires an argument -- '%c'\n", optopt);
             fprintf(stderr, "Try '%s --help' for more information.\n", PACKAGE);

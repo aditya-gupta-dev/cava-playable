@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 bin_PROGRAMS = cava
 cavadir = $(top_srcdir)
-cava_SOURCES = cava.c cavacore.c config.c input/common.c input/fifo.c input/shmem.c \
+cava_SOURCES = cava.c player.c cavacore.c config.c input/common.c input/fifo.c input/shmem.c \
                output/terminal_noncurses.c output/raw.c output/noritake.c \
                cavacore.h config.h input/common.h input/fifo.h input/shmem.h \
                output/terminal_noncurses.h output/raw.h output/noritake.h \
