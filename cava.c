@@ -346,6 +346,7 @@ Options:\n\
 \t-p, --config <path>    Path to config file\n\
 \t-v, --version          Print version and exit\n\
 \t-h, --help             Show this help and exit\n\
+\t-s, --song <path>      Path to audio file to play in a loop\n\
 \n\
 Keys:\n\
         Up        Increase sensitivity\n\
@@ -358,6 +359,7 @@ Keys:\n\
         b         Cycle background color\n\
         o         Change orientation bottom -> right -> top -> left (ncurses), top <-> bottom (other modes)\n\
         q         Quit\n\
+        Space     Play/Pause the playing song\n\
 \n";
     int c;
 #ifndef _WIN32

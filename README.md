@@ -43,6 +43,8 @@ What it is
 
 Cava is a bar spectrum audio visualizer for terminal or desktop (SDL).
 
+**Note:** This fork (`cava-playable`) includes a built-in audio player (`-s` option) that plays a song in a loop while visualizing it, and allows pausing/playing with the `space` bar!
+
 works on:
 * Linux
 * FreeBSD
@@ -668,6 +670,7 @@ Usage
     Options:
     	    -p          path to config file
     	    -v          print version
+    	    -s          path to audio file to play in a loop
 
 
 
@@ -686,6 +689,7 @@ If cava quits unexpectedly or is force killed, echo must be turned on manually w
 | <kbd>c</kbd> | Reload colors only |
 | <kbd>q</kbd> or <kbd>CTRL-C</kbd>| Quit C.A.V.A. |
 | <kbd>F11</kbd> | Toggle fullscreen (SDL / sdl_glsl) |
+| <kbd>space</kbd> | Play/Pause the playing song |
 
 Configuration
 -------------
