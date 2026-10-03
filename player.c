@@ -46,6 +46,7 @@ void *music_player_callback(void *arg) {
     return NULL;
   }
 
+  ma_sound_set_looping(&player->sound, MA_TRUE);
   ma_sound_start(&player->sound);
   enable_raw_mode();
   struct timespec sleep_dur = {0, 1000000000 / 1000};
